@@ -91,6 +91,17 @@ const struct rcc_clock_scale rcc_hse_configs[RCC_CLOCK_HSE_END] = {
 		.apb1_frequency = 84000000,
 		.apb2_frequency = 84000000,
 	},
+	{	/* 8->192 MHz */
+		.pll_mul = RCC_CFGR_PLLRANGE_HIGH | RCC_CFGR_PLLMUL_PLL_CLK_MUL24,
+		.pll_source = RCC_CFGR_PLLSRC_HSE_CLK,
+		.hpre = RCC_CFGR_HPRE_NODIV,
+		.ppre1 = RCC_CFGR_PPRE_DIV2,
+		.ppre2 = RCC_CFGR_PPRE_DIV2,
+		.adcpre = RCC_CFGR_ADCPRE_DIV4,
+		.ahb_frequency	= 192000000,
+		.apb1_frequency = 96000000,
+		.apb2_frequency = 96000000,
+	},
 	{	/* 8->240 MHz */
 		.pll_mul = RCC_CFGR_PLLRANGE_HIGH | RCC_CFGR_PLLMUL_PLL_CLK_MUL30,
 		.pll_source = RCC_CFGR_PLLSRC_HSE_CLK,
